@@ -35,7 +35,7 @@ namespace My14FEB {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button1;
+
 	protected:
 
 	private:
@@ -52,18 +52,7 @@ namespace My14FEB {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(mainForm::typeid));
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(426, 302);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"GG";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &mainForm::button1_Click);
 			// 
 			// mainForm
 			// 
@@ -71,22 +60,17 @@ namespace My14FEB {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(944, 501);
-			this->Controls->Add(this->button1);
 			this->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"mainForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"GG";
+			this->Text = L"from bebra with <3";
 			this->TopMost = true;
 			this->Load += gcnew System::EventHandler(this, &mainForm::mainForm_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		system("echo sosal?");
-		Close();
-	}
 	private: System::Void mainForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
