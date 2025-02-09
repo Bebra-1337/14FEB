@@ -1,8 +1,11 @@
 #include "mainForm.h"
+#include<iostream>
 
 using namespace System::Windows::Forms;
 
 using namespace System;
+
+using namespace System::Drawing;
 
 [STAThreadAttribute]
 
