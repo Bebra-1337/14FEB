@@ -180,17 +180,17 @@ namespace My14FEB {
 
 		}
 #pragma endregion
-	bool sosalinit = false;
+		bool sosalinit = false;
 	private: System::Void button_yes_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-		if (sosalinit==false) { this->label1->Text = L"Сосала?";sosalinit=true; }
-		}
-    private: System::Void button_no_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->label1->Text = L"Ну и пошла нахуй(((";
-	this->Text = L"Love destroyed(((";
-	button_no->Enabled = false;
-	button_yes->Enabled = false;
-	this->timer1->Enabled = true;
-}
+		if (sosalinit == false) { this->label1->Text = L"Сосала?"; sosalinit = true; }
+	}
+	private: System::Void button_no_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->label1->Text = L"Ну и пошла нахуй(((";
+		this->Text = L"Love destroyed(((";
+		button_no->Enabled = false;
+		button_yes->Enabled = false;
+		this->timer1->Enabled = true;
+	}
 	private: System::Void mainForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button_no_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
@@ -204,8 +204,8 @@ namespace My14FEB {
 		double distance = Math::Sqrt(Math::Pow(mouseX - buttonWidth / 2.0, 2) +
 			Math::Pow(mouseY - buttonHeight / 2.0, 2));
 
-		int proximity = 50; 
-		int escapeDistance = 20; 
+		int proximity = 50;
+		int escapeDistance = 20;
 
 		if (distance < proximity) {
 			int deltaX = 0;
@@ -244,30 +244,30 @@ namespace My14FEB {
 		this->label1->Text = L"Ты будешь моей валентинкой\?";
 	}
 	private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
-	if (this->Opacity > 0) {
-		this->Opacity -= 0.1;
+		if (this->Opacity > 0) {
+			this->Opacity -= 0.1;
+		}
+		else {
+			this->Close();
+		}
 	}
-	else {
-		this->Close();
-	}
-}	
-	private: System::Void button_yes_Click(System::Object^ sender, System::EventArgs^ e){
+	private: System::Void button_yes_Click(System::Object^ sender, System::EventArgs^ e) {
 		pictureBox1->Visible = true;
 		button_no->Visible = false;
 		button_yes->Visible = false;
 		label1->Visible = false;
 		label2->Visible = true;
 
-		
+
 		System::Windows::Forms::Timer^ timer = gcnew System::Windows::Forms::Timer();
 
-		
+
 		timer->Interval = 500;
 
-		
-		timer->Tick += gcnew System::EventHandler(this, &mainForm::timer2_Tick); 
 
-		
+		timer->Tick += gcnew System::EventHandler(this, &mainForm::timer2_Tick);
+
+
 		timer->Start();
 	}
 	private: System::Void timer2_Tick(System::Object^ sender, System::EventArgs^ e) {
@@ -279,6 +279,6 @@ namespace My14FEB {
 			pictureBox1->Width = 512;
 			pictureBox1->Height = 512;
 		}
-}
-};
+	}
+	};
 }
