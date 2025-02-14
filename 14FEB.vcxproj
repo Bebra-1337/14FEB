@@ -117,6 +117,7 @@
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
       <CLRThreadAttribute>STAThreadingAttribute</CLRThreadAttribute>
+      <Version>1.0</Version>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
