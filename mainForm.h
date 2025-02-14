@@ -200,7 +200,7 @@ namespace My14FEB {
 		int buttonWidth = button_no->Width;
 		int buttonHeight = button_no->Height;
 
-		// Вычисляем расстояние от центра кнопки до курсора
+		// Вычисление расстояния от центра кнопки до курсора
 		double distance = Math::Sqrt(Math::Pow(mouseX - buttonWidth / 2.0, 2) +
 			Math::Pow(mouseY - buttonHeight / 2.0, 2));
 
@@ -211,7 +211,7 @@ namespace My14FEB {
 			int deltaX = 0;
 			int deltaY = 0;
 
-			// Определяем направление убегания
+			// Направление съеба
 			if (mouseX < buttonWidth / 2) {
 				deltaX = escapeDistance;
 			}
@@ -229,14 +229,14 @@ namespace My14FEB {
 			int newX = button_no->Left + deltaX;
 			int newY = button_no->Top + deltaY;
 
-			// Получаем текущий размер окна
+			//this->ClientSize не прокнул и поэтому пришлось через костыль делать
 			System::Drawing::Size clientSize = this->ClientSize;
 
-			// Проверяем, чтобы кнопка не выходила за границы окна
+			// Проверка, чтобы не выходило за окно
 			newX = Math::Max(0, Math::Min(newX, clientSize.Width - buttonWidth));
 			newY = Math::Max(0, Math::Min(newY, clientSize.Height - buttonHeight));
 
-			// Устанавливаем новое положение кнопки
+			// Новое положение кнопки
 			button_no->Location = System::Drawing::Point(newX, newY);
 		}
 	}
@@ -258,16 +258,16 @@ namespace My14FEB {
 		label1->Visible = false;
 		label2->Visible = true;
 
-		// Создаем таймер
+		
 		System::Windows::Forms::Timer^ timer = gcnew System::Windows::Forms::Timer();
 
-		// Устанавливаем интервал (в миллисекундах) - чем меньше, тем быстрее "биение"
-		timer->Interval = 500; // Например, 500 миллисекунд = 0.5 секунды
+		
+		timer->Interval = 500;
 
-		// Подписываемся на событие Tick (происходит каждый интервал)
-		timer->Tick += gcnew System::EventHandler(this, &mainForm::timer2_Tick); // Замените Form1 на имя вашей формы
+		
+		timer->Tick += gcnew System::EventHandler(this, &mainForm::timer2_Tick); 
 
-		// Запускаем таймер
+		
 		timer->Start();
 	}
 	private: System::Void timer2_Tick(System::Object^ sender, System::EventArgs^ e) {
